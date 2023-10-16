@@ -6,8 +6,8 @@ SW1     equ P2.1        ; SW1 está conectado ao pino P1.1
 Display equ P1          ; Display de 7 segmentos está conectado ao Port 2
 
 ; Definição de constantes
-Delay025s   equ 250     ; Delay para 0,25 segundos
-Delay1s     equ 1000    ; Delay para 1 segundo
+Delay025s   equ 125     ; Delay para 0,25 segundos
+Delay1s     equ 500    ; Delay para 1 segundo
 
 ZERO	equ	0C0h
 UM		equ	0F9h
@@ -90,20 +90,22 @@ T9:
 ; Implementação da subrotina de Delay
 Delay:
     JNB SW1, Inicio_1s
-    JNB SW0, Inicio_25s
+    JNB SW0, Inicio_250ms
 
-Inicio_25s:
+Inicio_250ms:
     MOV R2, Delay025s
-    MOV R3, #250
+Loop_250ms:
+    MOV R3, #100
     DJNZ R3, $
-    DJNZ R2, Inicio_25s
+    DJNZ R2, Loop_250ms
 
     RET
 Inicio_1s:
-    MOV R3,Delay1s
-    MOV R3, #250
-    DJNZ R2, $
-    DJNZ R3, Inicio_1s
+    MOV R2,Delay1s
+Loop_1s:
+    MOV R3, #100
+    DJNZ R3, $
+    DJNZ R2, Loop_1s
 
     RET
 
