@@ -34,4 +34,4 @@ Este é um programa em Assembly para o microcontrolador 8051 que implementa um c
 
 👤 [Heitor Tanoue de Mello](https://github.com/heitortanoue) - NUSP: 12547260
 
-👤 [Guilherme Augusto de Oliveira](https://github.com/GuilhermeAMoreira) - NUSP:
+👤 [Guilherme Augusto Moreira](https://github.com/GuilhermeAMoreira) - NUSP: 12547281
