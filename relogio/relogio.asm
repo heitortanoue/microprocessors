@@ -9,6 +9,7 @@ Display equ P1          ; Display de 7 segmentos está conectado ao Port 2
 Delay025s   equ 125     ; Delay para 0,25 segundos
 Delay1s     equ 500    ; Delay para 1 segundo
 
+; equivalente hexadecimal dos números a serem mostrados no display
 ZERO	equ	0C0h
 UM		equ	0F9h
 DOIS	equ	0A4h
