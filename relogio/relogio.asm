@@ -89,25 +89,25 @@ T9:
   RET
 
 ; Implementação da subrotina de Delay
-Delay:
-    JNB SW1, Inicio_1s
-    JNB SW0, Inicio_250ms
+Delay:                  
+    JNB SW1, Inicio_1s    ; Vai para delay de 1s se o botão 1 estiver ativado
+    JNB SW0, Inicio_250ms ; Vai para delay de 250ms se o botão 0 estiver
 
 Inicio_250ms:
-    MOV R2, Delay025s
+    MOV R2, Delay025s     ; Armazena em R2 o valor do delay
 Loop_250ms:
-    MOV R3, #100
-    DJNZ R3, $
-    DJNZ R2, Loop_250ms
+    MOV R3, #100          ; R3 armazena 100
+    DJNZ R3, $            ; Decrementa 1 de R3 e só ignora caso seja 0
+    DJNZ R2, Loop_250ms   ; Decrementa 1 de R2 e vai para Loop_250ms caso não seja 0
 
-    RET
+    RET                   ; Volta para a linha a baixo do ultimo Call
 Inicio_1s:
-    MOV R2,Delay1s
+    MOV R2, Delay1s       ; Armazena em R2 o valor do delay
 Loop_1s:
-    MOV R3, #100
-    DJNZ R3, $
-    DJNZ R2, Loop_1s
+    MOV R3, #100          ; Armazena em R3 100
+    DJNZ R3, $            ; Decrementa 1 de R3 e só ignora caso seja 0
+    DJNZ R2, Loop_1s      ; Decrementa 1 de R2 e vai para Loop_1s caso não seja 0
 
-    RET
+    RET                   ; Volta para a linha a baixo do ultimo Call
 
 END
